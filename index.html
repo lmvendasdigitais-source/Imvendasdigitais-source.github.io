@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Meus Links - Ofertas Shopee e Mercado Livre</title>
+<style>
+  /* ======== VOCÊ PODE EDITAR ESSAS CORES AQUI ======== */
+  :root {
+    --cor-fundo-1: #ff6a00;   /* cor de cima do fundo */
+    --cor-fundo-2: #ee0979;   /* cor de baixo do fundo */
+    --cor-botao: #ffffff;     /* cor de fundo dos botões */
+    --cor-texto-botao: #222222; /* cor do texto dos botões */
+    --cor-titulo: #ffffff;    /* cor do título/nome */
+  }
+  /* ==================================================== */
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(180deg, var(--cor-fundo-1), var(--cor-fundo-2));
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    padding: 30px 16px 60px;
+  }
+  .container {
+    width: 100%;
+    max-width: 420px;
+    text-align: center;
+  }
+  .foto {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: #fff;
+    margin: 0 auto 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 40px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.25);
+  }
+  h1 {
+    color: var(--cor-titulo);
+    font-size: 22px;
+    margin: 0 0 4px;
+  }
+  p.bio {
+    color: var(--cor-titulo);
+    opacity: 0.9;
+    font-size: 14px;
+    margin: 0 0 26px;
+  }
+  .link-btn {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--cor-botao);
+    color: var(--cor-texto-botao);
+    text-decoration: none;
+    padding: 14px 18px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+    font-weight: 600;
+    font-size: 15px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+    transition: transform 0.15s ease;
+  }
+  .link-btn:active {
+    transform: scale(0.97);
+  }
+  .link-btn .emoji {
+    font-size: 22px;
+  }
+  footer {
+    margin-top: 30px;
+    color: var(--cor-titulo);
+    opacity: 0.7;
+    font-size: 12px;
+  }
+</style>
+</head>
+<body>
+
+<div class="container">
+  <div class="foto">🛍️</div>
+  <h1>Seu Nome Aqui</h1>
+  <p class="bio">Ofertas todos os dias 🔥 Shopee | Mercado Livre</p>
+
+  <!-- ======================================================= -->
+  <!-- ============ SEUS LINKS FICAM AQUI EMBAIXO ============ -->
+  <!-- Pra adicionar um novo, copie um bloco <a>...</a> inteiro -->
+  <!-- e cole embaixo, depois só trocar o texto e o link.       -->
+  <!-- ======================================================= -->
+
+  <a href="https://shopee.com.br/SEU-LINK-AQUI"
+     class="link-btn"
+     onclick="contarClique('shopee-produto1')"
+     target="_blank">
+    <span class="emoji">🧡</span> Promoção Shopee do Dia
+  </a>
+
+  <a href="https://produto.mercadolivre.com.br/SEU-LINK-AQUI"
+     class="link-btn"
+     onclick="contarClique('ml-produto1')"
+     target="_blank">
+    <span class="emoji">💛</span> Oferta Mercado Livre
+  </a>
+
+  <a href="https://shopee.com.br/OUTRO-LINK-AQUI"
+     class="link-btn"
+     onclick="contarClique('shopee-produto2')"
+     target="_blank">
+    <span class="emoji">🔥</span> Mais Vendido da Semana
+  </a>
+
+  <a href="https://wa.me/55SEUNUMEROAQUI"
+     class="link-btn"
+     onclick="contarClique('whatsapp')"
+     target="_blank">
+    <span class="emoji">💬</span> Fale comigo no WhatsApp
+  </a>
+
+  <!-- ======================================================= -->
+  <!-- ==================== FIM DOS LINKS ===================== -->
+  <!-- ======================================================= -->
+
+  <footer>Feito com ❤️ para divulgar as melhores ofertas</footer>
+</div>
+
+<script>
+  // Contador simples de cliques (salvo só no navegador de cada visitante)
+  function contarClique(nomeDoLink) {
+    let cliques = JSON.parse(localStorage.getItem('cliques') || '{}');
+    cliques[nomeDoLink] = (cliques[nomeDoLink] || 0) + 1;
+    localStorage.setItem('cliques', JSON.stringify(cliques));
+  }
+</script>
+
+</body>
+</html>
